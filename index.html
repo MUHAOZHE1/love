@@ -1,82 +1,4 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- 微信分享卡片设置 -->
-    <meta property="og:title" content="❤️" />
-    <meta property="og:description" content="点击查看媛媛的惊喜" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="#" />
-    <meta property="og:image" content="https://img.icons8.com/emoji/452/red-heart.png" />
-    
-    <!-- 微信专用 -->
-    <meta name="description" content="❤️ 给媛媛的特别惊喜">
-    <meta itemprop="name" content="❤️">
-    <meta itemprop="image" content="https://img.icons8.com/emoji/452/red-heart.png">
-    
-    <title>❤️</title>
-    
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #FF69B4 0%, #BA55D3 100%);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-        
-        .loading-container {
-            text-align: center;
-            color: white;
-        }
-        
-        .heart {
-            font-size: 80px;
-            animation: heartbeat 1s ease-in-out infinite;
-        }
-        
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        
-        .loading-text {
-            margin-top: 20px;
-            font-size: 20px;
-            opacity: 0.9;
-        }
-        
-        .dots {
-            display: inline-block;
-            animation: dots 1.5s steps(4, end) infinite;
-            width: 1em;
-            text-align: left;
-        }
-        
-        @keyframes dots {
-            0%, 20% { content: ''; }
-            40% { content: '.'; }
-            60% { content: '..'; }
-            80%, 100% { content: '...'; }
-        }
-    </style>
-</head>
-<body>
-    <div class="loading-container">
-        <div class="heart">❤️</div>
-        <div class="loading-text">
-            正在准备惊喜<span class="dots">...</span>
-        </div>
-    </div>
-
-    <script>
-        // 完整的表白页面HTML代码
-        const lovePageHTML = `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -86,7 +8,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="x5-orientation" content="portrait">
 <meta name="screen-orientation" content="portrait">
-<title>❤️</title>
+<title>❤️ 给媛媛的表白</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:linear-gradient(135deg,#FF69B4 0%,#BA55D3 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
@@ -209,7 +131,7 @@ function sayNo(btn){
 playSound();
 noClickCount++;
 const scale=1+noClickCount*0.2;
-btn.style.transform=\`scale(\${scale})\`;
+btn.style.transform=`scale(${scale})`;
 const maxX=window.innerWidth-btn.offsetWidth*scale;
 const maxY=window.innerHeight-btn.offsetHeight*scale;
 const randomX=Math.random()*maxX;
@@ -317,21 +239,6 @@ window.addEventListener('error',function(e){
 console.log('Error caught:',e.message);
 return true;
 });
-<\/script>
-</body>
-</html>`;
-
-        // 延迟跳转，让加载动画显示一会儿
-        setTimeout(() => {
-            // 创建data URL并跳转
-            const dataURL = 'data:text/html;charset=utf-8,' + encodeURIComponent(lovePageHTML);
-            window.location.href = dataURL;
-        }, 1500);
-
-        // 微信环境检测
-        if (typeof WeixinJSBridge !== 'undefined') {
-            WeixinJSBridge.call('hideOptionMenu');
-        }
-    </script>
+</script>
 </body>
 </html>
